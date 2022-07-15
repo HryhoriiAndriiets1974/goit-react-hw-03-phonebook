@@ -15,7 +15,7 @@ class App extends Component {
     this.setState({filter: e.currentTarget.value});
   }
 
-  newContacts = () => {
+  filterContacts = () => {
     const { contacts, filter } = this.state;
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -62,7 +62,7 @@ class App extends Component {
 
   render () {
     const { contacts, filter} = this.state;
-    const visibleContacts = this.newContacts();
+    const visibleContacts = this.filterContacts();
     return (
       <div className={css.wrapper}>
         <h1 className={css.wrapper__title}>Phonebook</h1>
